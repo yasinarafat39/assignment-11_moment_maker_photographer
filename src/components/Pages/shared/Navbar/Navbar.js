@@ -15,9 +15,10 @@ const Navbar = () => {
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="/services">Services</Link></li>
                         <li><Link>Item 3</Link></li>
+                        <Link className='' to="/"><img src={logo} className="w-[60px] h-[60px] mr-3" alt='Logo' /> <h2 className='text-2xl font-bold font-mono'>M.M PHOTOGRAPHER</h2></Link>
                     </ul>
                 </div>
-                <Link className='flex items-center' to="/"><img src={logo} className="w-[60px] h-[60px] mr-3" alt='Logo' /> <h2 className='text-2xl font-bold font-mono'>M.M PHOTOGRAPHER</h2></Link>
+                <Link className='lg:flex  items-center hidden' to="/"><img src={logo} className="w-[60px] h-[60px] mr-3" alt='Logo' /> <h2 className='text-2xl font-bold font-mono'>M.M PHOTOGRAPHER</h2></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className=" font-bold menu menu-horizontal p-0">
@@ -25,9 +26,11 @@ const Navbar = () => {
                     <li><Link to="/services">Services</Link></li>
                     <li><Link>Item 3</Link></li>
                 </ul>
+
             </div>
             <div className="navbar-end">
                 <Link to="/login" className="btn mr-3">Login</Link>
+                <Link to="/register" className="btn mr-3">Register</Link>
                 <Link to="/logout" className="btn">Log out</Link>
             </div>
         </div>

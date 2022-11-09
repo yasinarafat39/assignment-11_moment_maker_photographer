@@ -1,5 +1,6 @@
 import { Result } from 'postcss';
 import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import logo from '../../../../assets/logo(1).png';
 import { AuthContext } from '../../../../contexts/AuthProvider/AuthProvider';
@@ -9,13 +10,14 @@ const Navbar = () => {
 
     const { user, logOut } = useContext(AuthContext);
 
+    // Log Out System
     const handleLogOut = () => {
         logOut()
-            .then(Result => {
-                console.log("User Log Out");
+            .then(() => {
+                toast.success('Log Out Success');
             })
             .catch(err => {
-                console.error(err)
+                toast.error(err);
             })
     }
 

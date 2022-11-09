@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 
@@ -20,7 +20,7 @@ const Login = () => {
         const password = form.password.value;
         console.log(email, password);
 
-
+        // Login with email and password
         logIn(email, password)
             .then(result => {
                 const user = result.user;
@@ -28,11 +28,12 @@ const Login = () => {
                 form.reset();
                 setError('');
                 navigate('/');
-
+                toast.success('Login Success');
             })
             .catch(error => {
-                setError(error)
+                setError(error);
                 console.log(error);
+                toast.error(error);
             })
     }
 
@@ -45,10 +46,12 @@ const Login = () => {
                 console.log(user);
                 navigate('/')
                 setError('');
+                toast.success('Login Success');
             })
             .catch(error => {
-                setError(error)
+                setError(error);
                 console.log(error);
+                toast.error(error);
             })
     }
 
@@ -91,7 +94,7 @@ const Login = () => {
                     </button>
                 </div>
                 <p className="text-xs text-center sm:px-6 text-gray-600">Don't have an account?
-                    <a rel="noopener noreferrer" href="/register" className="underline text-gray-800"> Sign up</a>
+                    <Link to="/register" className="underline text-gray-800"> Sign up</Link>
                 </p>
             </div>
         </div>

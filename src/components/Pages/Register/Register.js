@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const Register = () => {
@@ -105,7 +105,7 @@ const Register = () => {
                             error && <p className='text-red'>{error}</p>
                         }
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary">Register</button>
+                            <button type='submit' className="btn btn-primary">Register</button>
                         </div>
                         <div className="flex justify-center space-x-4">
                             <button onClick={handleGoogleLogin} aria-label="Login with Google" type="button" className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 border-gray-600 focus:ring-green-600">
@@ -116,7 +116,7 @@ const Register = () => {
                             </button>
                         </div>
                         <p className="text-xs text-center sm:px-6 text-gray-600">Already have an account?
-                            <a rel="noopener noreferrer" href="/login" className="underline text-gray-800"> Log in</a>
+                            <Link to="/login" className="underline text-gray-800"> Log in</Link>
                         </p>
                     </form>
                 </div>

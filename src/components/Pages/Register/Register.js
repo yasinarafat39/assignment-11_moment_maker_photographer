@@ -1,13 +1,32 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
+import { Navigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const Register = () => {
 
-    const { user, register } = useContext(AuthContext);
+    const { createNewUser } = useContext(AuthContext);
+    const [error, setError] = useState('');
 
     const handleRegister = event => {
         event.preventDefault();
-        
+        const form = event.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(name, email, password);
+
+        createNewUser(email, password)
+            .then(userCredential => {
+                const user = userCredential.user;
+                console.log(user);
+                setError('');
+                form.reset();
+                Navigate('/');
+            })
+            .catch(err => {
+                setError(err);
+                console.error(err);
+            })
     }
 
     return (
@@ -18,7 +37,7 @@ const Register = () => {
                     <p className="py-6">Please Register to add your review in my services. After Register you will enjoy my additional feature.</p>
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                    <div className="card-body">
+                    <form onSubmit={handleRegister} className="card-body">
                         <div className="form-control">
                             <label className="label" htmlFor='user-name'>
                                 <span className="label-text">Full Name</span>
@@ -35,12 +54,15 @@ const Register = () => {
                             <label className="label" htmlFor='password'>
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password" placeholder="password" id='password' className="input input-bordered" required />
+                            <input type="password" name='password' placeholder="password" id='password' className="input input-bordered" required />
                         </div>
+                        {
+                            error && <p className='text-red'>{error}</p>
+                        }
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Register</button>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>

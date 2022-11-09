@@ -43,9 +43,11 @@ const Register = () => {
 
         updateUserProfile(profile)
             .then(() => {
+                setError('')
                 console.log('User updated');
             })
             .catch(error => {
+                setError(error);
                 console.log(error);
             })
     }
@@ -89,6 +91,9 @@ const Register = () => {
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Register</button>
                         </div>
+                        <p className="text-xs text-center sm:px-6 text-gray-600">Already have an account?
+                            <a rel="noopener noreferrer" href="/login" className="underline text-gray-800"> Log in</a>
+                        </p>
                     </form>
                 </div>
             </div>

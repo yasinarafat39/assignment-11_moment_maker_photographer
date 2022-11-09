@@ -1,20 +1,32 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useRouteError } from 'react-router-dom';
 
 const Error = () => {
+    const error = useRouteError();
+    console.log(error);
     return (
-        <section className="flex items-center h-screen p-16 bg-gray-50 text-gray-800">
-            <div className="container flex flex-col items-center justify-center px-5 mx-auto my-8">
-                <div className="max-w-md text-center">
-                    <h2 className="mb-8 font-extrabold text-9xl text-gray-400">
-                        <span className="sr-only">Error</span>404
-                    </h2>
-                    <p className="text-2xl font-semibold md:text-3xl">Sorry, we couldn't find this page.</p>
-                    <p className="mt-4 mb-8 text-gray-600">But dont worry, you can find plenty of other things on our homepage.</p>
-                    <Link rel="noopener noreferrer" to="/" className="px-8 py-3 font-semibold rounded bg-green-600 text-gray-50">Back to homepage</Link>
-                </div>
+        <div className='text-center flex items-center justify-center mt-48'>
+            <div>
+                {
+                    error && <>
+
+                        <h3 className='text-8xl font-bold text-gray-800'>{error.status}</h3>
+                        <p className='text-3xl font-semibold'>Sorry, an unexpected error has occurred.</p>
+                        <p className='text-red-400 text-2xl'>
+                            <i>{error.statusText || error.message}</i>
+                        </p>
+                        <Link
+                            to="/"
+                            className=" mt-4 inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-gray-600 bg-gray-200 transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                            aria-label="Sign up"
+                            title="Sign up"
+                        >
+                            Back to Home
+                        </Link>
+                    </>
+                }
             </div>
-        </section>
+        </div>
     );
 };
 

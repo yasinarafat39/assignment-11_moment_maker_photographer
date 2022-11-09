@@ -23,14 +23,17 @@ const AuthProvider = ({ children }) => {
     }
 
     const LogInWithGoogle = () => {
+        setLoading(true);
         return signInWithPopup(auth, googleProvider);
     }
 
     const updateUserProfile = (profile) => {
+        setLoading(true);
         return updateProfile(auth.currentUser, profile)
     }
 
     const logOut = () => {
+        setLoading(true);
         return signOut(auth);
     }
 

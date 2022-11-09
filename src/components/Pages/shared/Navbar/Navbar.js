@@ -1,4 +1,3 @@
-import { Result } from 'postcss';
 import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
@@ -9,6 +8,8 @@ import { AuthContext } from '../../../../contexts/AuthProvider/AuthProvider';
 const Navbar = () => {
 
     const { user, logOut } = useContext(AuthContext);
+    console.log(user);
+
 
     // Log Out System
     const handleLogOut = () => {
@@ -31,7 +32,7 @@ const Navbar = () => {
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="/services/all">Services</Link></li>
-                        <li><Link>Item 3</Link></li>
+
                         <Link className='' to="/"><img src={logo} className="w-[60px] h-[60px] mr-3" alt='Logo' /> <h2 className='text-2xl font-bold font-mono'>M.M PHOTOGRAPHER</h2></Link>
                     </ul>
                 </div>
@@ -41,15 +42,26 @@ const Navbar = () => {
                 <ul className=" font-bold menu menu-horizontal p-0">
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/services/all">Services</Link></li>
-                    <li><Link>Item 3</Link></li>
+
                 </ul>
 
             </div>
             <div className="navbar-end">
-                <Link to="/login" className="btn mr-3">Login</Link>
-                <Link to="/register" className="btn mr-3">Register</Link>
-                <Link onClick={handleLogOut} className="btn">Log out</Link>
-                <p>{user?.email}</p>
+
+
+                {
+                    user?.uid ?
+
+                        <div className='flex items-center'>
+                            <img title={user.displayName} src={user.photoURL} alt="" className='w-[60px] h-[60px] rounded-full mr-4' />
+                            <Link onClick={handleLogOut} className="btn">Log out</Link>
+                        </div>
+                        :
+                        <>
+                            <Link to="/login" className="btn mr-3">Login</Link>
+                            <Link to="/register" className="btn mr-3">Register</Link>
+                        </>
+                }
             </div>
 
         </div>

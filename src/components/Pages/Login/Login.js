@@ -13,7 +13,7 @@ const Login = () => {
     const navigate = useNavigate();
 
 
-    const handlLogin = (event) => {
+    const handleLogin = (event) => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
@@ -59,7 +59,7 @@ const Login = () => {
         <div className='flex justify-center'>
             <div className="w-full max-w-md p-8 space-y-3 rounded-xl bg-gray-50 text-gray-800">
                 <h1 className="text-2xl font-bold text-center">Login</h1>
-                <form onSubmit={handlLogin} action="" className="space-y-6 ng-untouched ng-pristine ng-valid">
+                <form onSubmit={handleLogin} action="" className="space-y-6 ng-untouched ng-pristine ng-valid">
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Email</span>

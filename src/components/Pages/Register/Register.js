@@ -19,6 +19,7 @@ const Register = () => {
         const password = form.password.value;
         console.log(name, email, password, photoURL);
 
+        // Create New User with E-mail and Password
         createNewUser(email, password)
             .then(userCredential => {
                 const user = userCredential.user;
@@ -27,10 +28,11 @@ const Register = () => {
                 form.reset();
                 navigate('/');
                 handleUpdateUserProfile(name, photoURL)
-
+                toast.success('User Create Successful')
             })
             .catch(err => {
                 setError(err);
+                toast.error(err);
                 console.error(err);
             })
     }
@@ -43,9 +45,11 @@ const Register = () => {
                 console.log(user);
                 navigate('/')
                 setError('');
+                toast.success('Login Success')
             })
             .catch(error => {
                 setError(error)
+                toast.error(error);
                 console.log(error);
             })
     }

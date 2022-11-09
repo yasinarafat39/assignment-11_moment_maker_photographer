@@ -55,7 +55,7 @@ const Talk = () => {
                         </div>
                     </div>
                     <div aria-hidden="true" className="mt-10 lg:mt-0">
-                        <img src="https://source.unsplash.com/random/360x480" alt="" className="mx-auto rounded-lg shadow-lg bg-gray-500" />
+                        <img src="https://images.pexels.com/photos/2507829/pexels-photo-2507829.jpeg?auto=compress&cs=tinysrgb&w=400" alt="" className=" mx-auto rounded-lg shadow-lg bg-gray-500" />
                     </div>
                 </div>
 

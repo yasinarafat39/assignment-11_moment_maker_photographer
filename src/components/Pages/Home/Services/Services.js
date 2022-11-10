@@ -21,8 +21,8 @@ const Services = () => {
         <div className='m-6'>
 
             <div className='mb-12'>
-                <h2 className='text-5xl mb-4 font-semibold text-center text-gray-800'>Services</h2>
-                <p className='text-center text-gray-400'>This is my Photography services.</p>
+                <h2 className='text-5xl mb-4 font-semibold text-center text-green-600'>Services</h2>
+                <p className='text-center text-green-800'>This is my Photography services.</p>
             </div>
 
             <div className='grid lg:grid-cols-3 md:grid-cols-2 gap-6'>

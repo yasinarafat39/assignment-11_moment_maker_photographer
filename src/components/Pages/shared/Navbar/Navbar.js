@@ -39,13 +39,13 @@ const Navbar = () => {
                                     <li><NavLink className={({ isActive }) => isActive ? 'underline underline-offset-2' : ''} to="/services/all">Services</NavLink></li>
                                     <li><NavLink className={({ isActive }) => isActive ? 'underline underline-offset-2' : ''} to="/myreviews">My Reviews</NavLink></li>
                                     <li><NavLink className={({ isActive }) => isActive ? 'underline underline-offset-2' : ''} to="/addservice">Add Service</NavLink></li>
-                                    <li><NavLink className={({ isActive }) => isActive ? 'underline underline-offset-2' : ''} to="/blog">Blog</NavLink></li>
+                                    <li><NavLink className={({ isActive }) => isActive ? 'underline underline-offset-2' : ''} to="/blog">Blogs</NavLink></li>
                                 </>
                                 :
                                 <>
                                     <li><NavLink className={({ isActive }) => isActive ? 'underline underline-offset-2' : ''} to="/">Home</NavLink></li>
                                     <li><NavLink className={({ isActive }) => isActive ? 'underline underline-offset-2' : ''} to="/services/all">Services</NavLink></li>
-                                    <li><NavLink className={({ isActive }) => isActive ? 'underline underline-offset-2' : ''} to="/blog">Blog</NavLink></li>
+                                    <li><NavLink className={({ isActive }) => isActive ? 'underline underline-offset-2' : ''} to="/blog">Blogs</NavLink></li>
                                 </>
                         }
 
@@ -64,13 +64,13 @@ const Navbar = () => {
                                 <li><NavLink className={({ isActive }) => isActive ? 'underline underline-offset-2' : ''} to="/services/all">Services</NavLink></li>
                                 <li><NavLink className={({ isActive }) => isActive ? 'underline underline-offset-2' : ''} to="/myreviews">My Reviews</NavLink></li>
                                 <li><NavLink className={({ isActive }) => isActive ? 'underline underline-offset-2' : ''} to="/addservice">Add Service</NavLink></li>
-                                <li><NavLink className={({ isActive }) => isActive ? 'underline underline-offset-2' : ''} to="/blog">Blog</NavLink></li>
+                                <li><NavLink className={({ isActive }) => isActive ? 'underline underline-offset-2' : ''} to="/blog">Blogs</NavLink></li>
                             </>
                             :
                             <>
                                 <li><NavLink className={({ isActive }) => isActive ? 'underline underline-offset-2' : ''} to="/">Home</NavLink></li>
                                 <li><NavLink className={({ isActive }) => isActive ? 'underline underline-offset-2' : ''} to="/services/all">Services</NavLink></li>
-                                <li><NavLink className={({ isActive }) => isActive ? 'underline underline-offset-2' : ''} to="/blog">Blog</NavLink></li>
+                                <li><NavLink className={({ isActive }) => isActive ? 'underline underline-offset-2' : ''} to="/blog">Blogs</NavLink></li>
                             </>
                     }
 

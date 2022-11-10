@@ -19,7 +19,7 @@ const MyReview = () => {
         })
             .then(res => {
 
-                if (res.status === 401 || res.status === 403 ) {
+                if (res.status === 401 || res.status === 403) {
                     logOut()
                 }
 
@@ -67,15 +67,28 @@ const MyReview = () => {
     return (
         <div className='max-w-screen-xl mx-auto'>
 
-            <section className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 mx-4 mt-12'>
-                {
-                    reviews.map(review => <MySingleReview
-                        key={review._id}
-                        review={review}
-                        handleDeleteReview={handleDeleteReview}
-                    ></MySingleReview>)
-                }
-            </section>
+            {
+                reviews ?
+
+                    <>
+                        <section className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 mx-4 mt-12'>
+                            {
+                                reviews.map(review => <MySingleReview
+                                    key={review._id}
+                                    review={review}
+                                    handleDeleteReview={handleDeleteReview}
+                                ></MySingleReview>)
+                            }
+                        </section>
+                    </>
+                    :
+                    <>
+                        <h2 className='text-gray-600 text-2xl font-bold text-center my-28'>You Have No Review</h2>
+                    </>
+
+            }
+
+
         </div>
     );
 };

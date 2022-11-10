@@ -13,7 +13,7 @@ const Banner = () => {
                     <p className="mt-6 mb-8 text-lg sm:mb-12 xl:max-w-3xl text-white">You want to hire a Professional Photographer for your event? You can hire me as a Photographer to handle your event</p>
                     <div className="flex flex-wrap justify-center">
                         <Link to="/services/all"><button type="button" className="px-8 py-3 m-2 text-lg font-semibold rounded bg-gray-800 text-gray-50">Services</button></Link>
-                        <Link to="/blog"><button type="button" className="px-8 py-3 m-2 text-lg border rounded border-gray-700 hover:bg-gray-800  hover:text-gray-50 transition text-gray-900">Blog</button></Link>
+                        <Link to="/blog"><button type="button" className="px-8 py-3 m-2 text-lg border rounded border-gray-700 hover:bg-gray-800  hover:text-gray-50 transition text-gray-900">Blogs</button></Link>
                     </div>
                 </div>
             </div>

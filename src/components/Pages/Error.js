@@ -3,7 +3,7 @@ import { Link, useRouteError } from 'react-router-dom';
 
 const Error = () => {
     const error = useRouteError();
-    console.log(error);
+
     return (
         <div className='text-center flex items-center justify-center mt-48'>
             <div>

@@ -2,7 +2,7 @@ import React from 'react';
 
 const BlogPage = () => {
     return (
-        <div className='max-w-screen-xl lg:mx-auto grid lg:grid-cols-2 md:grid-cols-2 gap-4 m-4 lg:m-0'>
+        <div className='max-w-screen-xl lg:mx-auto grid lg:grid-cols-2 md:grid-cols-2 gap-4 m-4 '>
             <div>
                 <h3 className='text-xl font-semibold'>Difference between SQL and NoSQL</h3>
                 <p className='text-gray-600'>When it comes to choosing a database the biggest decisions is picking a relational (SQL) or non-relational (NoSQL) data structure. While both the databases are viable options still there are certain key differences between the two that users must keep in mind when making a decision.</p>

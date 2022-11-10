@@ -1,4 +1,5 @@
 import React from 'react';
+import { PhotoView } from 'react-photo-view';
 import { Link } from 'react-router-dom';
 
 const SingleService = ({ service }) => {

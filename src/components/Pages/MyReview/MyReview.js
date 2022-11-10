@@ -7,13 +7,24 @@ import MySingleReview from './MySingleReview';
 
 const MyReview = () => {
 
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
     const [reviews, setReviews] = useState([]);
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews/current?email=${user?.email}`)
-            .then(res => res.json())
+        fetch(`http://localhost:5000/reviews/current?email=${user?.email}`, {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('Photography-Token')}`
+            }
+        })
+            .then(res => {
+
+                if (res.status(401) || res.status(403)) {
+                    logOut()
+                }
+
+                return res.json()
+            })
             .then(data => setReviews(data))
 
     }, [user?.email])
@@ -43,11 +54,11 @@ const MyReview = () => {
     // handle Update user Review
     const handleUpdateReview = _id => {
         fetch(`http://localhost:5000/reviews/${_id}`, {
-        method: 'PATCH',
-        headers: {
-            'content-type': 'application/json'
-        },
-        body: JSON.stringify({reviews})
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({ reviews })
         })
     }
 
@@ -55,7 +66,7 @@ const MyReview = () => {
 
     return (
         <div>
-            
+
             <section className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 mx-4 mt-12'>
                 {
                     reviews.map(review => <MySingleReview

@@ -50,7 +50,9 @@ const Login = () => {
                         localStorage.setItem('Photography-Token', data.token);
                         navigate(from, { replace: true });
                     })
-
+                navigate('/')
+                setError('');
+                toast.success('Login Success');
 
             })
             .catch(error => {

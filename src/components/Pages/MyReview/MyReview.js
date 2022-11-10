@@ -12,7 +12,7 @@ const MyReview = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews/current?email=${user?.email}`, {
+        fetch(`https://moment-maker-photographer-server.vercel.app/reviews/current?email=${user?.email}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('Photography-Token')}`
             }
@@ -34,7 +34,7 @@ const MyReview = () => {
     const handleDeleteReview = _id => {
         const proceed = window.confirm("Are you sure? You want to Delete this review.");
         if (proceed) {
-            fetch(`http://localhost:5000/reviews/${_id}`, {
+            fetch(`https://moment-maker-photographer-server.vercel.app/reviews/${_id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -53,7 +53,7 @@ const MyReview = () => {
 
     // handle Update user Review
     const handleUpdateReview = _id => {
-        fetch(`http://localhost:5000/reviews/${_id}`, {
+        fetch(`https://moment-maker-photographer-server.vercel.app/reviews/${_id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'

@@ -10,7 +10,7 @@ const Services = () => {
 
     const handleViewAllServices = () => {
 
-        fetch('http://localhost:5000/services/all')
+        fetch('https://moment-maker-photographer-server.vercel.app/services/all')
             .then(res => res.json())
             .then(data => console.log(data))
 

@@ -20,7 +20,7 @@ const AddService = () => {
             description: serviceDescription
         }
 
-        fetch('http://localhost:5000/service', {
+        fetch('https://moment-maker-photographer-server.vercel.app/service', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

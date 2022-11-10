@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const Register = () => {
@@ -8,7 +8,8 @@ const Register = () => {
     const { createNewUser, updateUserProfile, LogInWithGoogle } = useContext(AuthContext);
     const [error, setError] = useState('');
     const navigate = useNavigate();
-
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
     const handleRegister = event => {
         event.preventDefault();
@@ -42,10 +43,31 @@ const Register = () => {
         LogInWithGoogle()
             .then(result => {
                 const user = result.user;
-                console.log(user);
+
+
+                const currentUser = {
+                    email: user.email
+                }
+
+                // get jwt token
+                fetch('https://moment-maker-photographer-server.vercel.app/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+
+                        localStorage.setItem('Photography-Token', data.token);
+                        navigate(from, { replace: true });
+                    })
+
+
                 navigate('/')
                 setError('');
-                toast.success('Login Success')
+                toast.success('Login Success');
             })
             .catch(error => {
                 setError(error)

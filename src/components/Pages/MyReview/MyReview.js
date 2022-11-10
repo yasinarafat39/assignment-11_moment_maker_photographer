@@ -19,6 +19,7 @@ const MyReview = () => {
     }, [user?.email])
 
 
+    // handle Delete that you Review
     const handleDeleteReview = _id => {
         const proceed = window.confirm("Are you sure? You want to Delete this review.");
         if (proceed) {
@@ -38,9 +39,23 @@ const MyReview = () => {
         }
     }
 
+
+    // handle Update user Review
+    const handleUpdateReview = _id => {
+        fetch(`http://localhost:5000/reviews/${_id}`, {
+        method: 'PATCH',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify({reviews})
+        })
+    }
+
+
+
     return (
         <div>
-            <p>You have: {reviews.length}</p>
+            
             <section className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 mx-4 mt-12'>
                 {
                     reviews.map(review => <MySingleReview

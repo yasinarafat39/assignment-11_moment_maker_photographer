@@ -73,7 +73,7 @@ const ServiceDetailsPage = () => {
             </section>
 
             <h3 className='text-center text-3xl font-semibold font-mono text-green-600 mt-20'>All Review</h3>
-            <section className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3 mx-4 mt-12'>
+            <section className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 mx-4 mt-12'>
                 {
                     reviews.map(review => <Review
                     key={review._id}

@@ -9,6 +9,7 @@ import ServiceDetailsPage from "../../components/Pages/Home/Services/ServiceDeta
 import MyReview from "../../components/Pages/MyReview/MyReview";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import AddService from "../../components/Pages/AddService/AddService";
+import BlogPage from "../../components/Pages/BlogPage/BlogPage";
 
 
 
@@ -48,6 +49,10 @@ export const router = createBrowserRouter([
             {
                 path: '/addservice',
                 element: <PrivateRoute><AddService></AddService></PrivateRoute>
+            },
+            {
+                path: '/blog',
+                element: <BlogPage></BlogPage>
             }
 
         ]

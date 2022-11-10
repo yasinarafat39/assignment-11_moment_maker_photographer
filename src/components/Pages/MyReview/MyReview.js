@@ -65,7 +65,7 @@ const MyReview = () => {
 
 
     return (
-        <div>
+        <div className='max-w-screen-xl mx-auto'>
 
             <section className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 mx-4 mt-12'>
                 {

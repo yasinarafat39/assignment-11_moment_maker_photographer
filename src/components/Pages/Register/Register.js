@@ -53,7 +53,7 @@ const Register = () => {
                 }
 
                 // get jwt token
-                fetch('http://localhost:5000/jwt', {
+                fetch('https://moment-maker-photographer-server.vercel.app/jwt', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

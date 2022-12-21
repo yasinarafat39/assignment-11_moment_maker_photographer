@@ -22,7 +22,7 @@ export const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('https://moment-maker-photographer-server.vercel.app/services')
+                loader: () => fetch('http://localhost:5000/services')
             },
             {
                 path: '/login',
@@ -35,12 +35,12 @@ export const router = createBrowserRouter([
             {
                 path: '/services/all',
                 element: <AllService></AllService>,
-                loader: () => fetch('https://moment-maker-photographer-server.vercel.app/services/all')
+                loader: () => fetch('http://localhost:5000/services/all')
             },
             {
                 path: '/services/:id',
                 element: <ServiceDetailsPage></ServiceDetailsPage>,
-                loader: ({ params }) => fetch(`https://moment-maker-photographer-server.vercel.app/services/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
             },
             {
                 path: '/myreviews',

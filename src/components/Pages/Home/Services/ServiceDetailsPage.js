@@ -30,7 +30,7 @@ const ServiceDetailsPage = () => {
             reviewMessage: reviewMessage
         }
 
-        fetch('https://moment-maker-photographer-server.vercel.app/reviews', {
+        fetch('http://localhost:5000/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -50,7 +50,7 @@ const ServiceDetailsPage = () => {
 
 
     useEffect(() => {
-        fetch('https://moment-maker-photographer-server.vercel.app/reviews')
+        fetch('http://localhost:5000/reviews')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [])

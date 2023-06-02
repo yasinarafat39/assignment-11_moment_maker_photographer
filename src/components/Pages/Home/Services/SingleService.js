@@ -17,7 +17,7 @@ const SingleService = ({ service }) => {
                 easing={(type) => (type === 2 ? 'cubic-bezier(0.36, 0, 0.66, -0.56)' : 'cubic-bezier(0.34, 1.56, 0.64, 1)')}
             >
                 <PhotoView src={img} >
-                    <figure><img src={img} alt="Shoes" /></figure>
+                    <figure><img src={img} alt="pictures" /></figure>
                 </PhotoView>
             </PhotoProvider>
 

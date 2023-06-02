@@ -3,6 +3,8 @@ import Banner from './Banner/Banner';
 import CameraSection from './CameraSection/CameraSection';
 import Services from './Services/Services';
 import Talk from './Talk/Talk';
+import Gallery from './Gallery/Gallery';
+import Testimonial from './Testimonial/Testimonial';
 
 const Home = () => {
     return (
@@ -11,6 +13,8 @@ const Home = () => {
             <Services></Services>
             <CameraSection></CameraSection>
             <Talk></Talk>
+            <Gallery></Gallery>
+            <Testimonial></Testimonial>
         </div>
     );
 };

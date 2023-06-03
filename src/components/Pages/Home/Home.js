@@ -5,16 +5,18 @@ import Services from './Services/Services';
 import Talk from './Talk/Talk';
 import Gallery from './Gallery/Gallery';
 import Testimonial from './Testimonial/Testimonial';
+import ContactMe from './ContactMe/ContactMe';
 
 const Home = () => {
     return (
         <div className='max-w-screen-xl mx-auto'>
             <Banner></Banner>
-            <Services></Services>
+            <Gallery></Gallery>
             <CameraSection></CameraSection>
             <Talk></Talk>
-            <Gallery></Gallery>
+            <Services></Services>
             <Testimonial></Testimonial>
+            <ContactMe></ContactMe>
         </div>
     );
 };

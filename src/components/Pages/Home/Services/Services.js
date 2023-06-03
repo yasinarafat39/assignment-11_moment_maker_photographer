@@ -18,11 +18,11 @@ const Services = () => {
     }
 
     return (
-        <div className=' md:m-4 lg:m-0 '>
+        <div className='mx-4 md:m-4 lg:m-12'>
 
             <div className='mb-12'>
-                <h2 className='text-5xl mb-4 font-semibold text-center text-green-600'>Services</h2>
-                <p className='text-center text-green-800'>This is my Photography services.</p>
+                <h2 className='text-5xl m-4 mt-14 font-semibold text-center text-green-600'>Services</h2>
+                <p className='text-center text-[1.5em] md:text-[2em] text-green-800'>Available services.</p>
             </div>
 
             <div className='grid lg:grid-cols-3 md:grid-cols-2 gap-6'>

@@ -3,7 +3,7 @@ import bgImage from './contact.jpg';
 
 const ContactMe = () => {
     return (
-        <div className='mt-16'>
+        <div className='mt-16 drop-shadow-md'>
             <section className=''>
                 <img src={bgImage} className='w-full' alt="" />
 
@@ -16,7 +16,7 @@ const ContactMe = () => {
                         <input type="text" placeholder="Your E-mail" className="input input-bordered w-full md:w-1/2" />
 
                     </label>
-                    <textarea className="textarea textarea-ghost w-full my-5 min-h-16  border-b-2 border-gray-300" placeholder="Type Message"></textarea>
+                    <textarea className="textarea textarea-ghost w-full my-5 h-40  border-b-2 border-gray-300" placeholder="Type Message"></textarea>
                     <button className="btn btn-outline btn-success flex mx-auto ">Send Message</button>
                 </section>
             </section>
